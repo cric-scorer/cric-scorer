@@ -1,0 +1,3 @@
+{
+	"extends": "@cric-scorer/config/tsconfig.base.json"
+}

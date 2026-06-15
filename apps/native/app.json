@@ -1,0 +1,14 @@
+{
+	"expo": {
+		"scheme": "cric-scorer",
+		"userInterfaceStyle": "dark",
+		"orientation": "default",
+		"name": "cric-scorer",
+		"slug": "cric-scorer",
+		"plugins": ["expo-font"],
+		"experiments": {
+			"typedRoutes": true,
+			"reactCompiler": true
+		}
+	}
+}
