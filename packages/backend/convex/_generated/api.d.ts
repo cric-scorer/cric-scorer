@@ -11,7 +11,8 @@
 import type * as auth from "../auth.js";
 import type * as healthCheck from "../healthCheck.js";
 import type * as http from "../http.js";
-import type * as privateData from "../privateData.js";
+import type * as lib_enums from "../lib/enums.js";
+import type * as lib_helpers from "../lib/helpers.js";
 
 import type {
   ApiFromModules,
@@ -23,7 +24,8 @@ declare const fullApi: ApiFromModules<{
   auth: typeof auth;
   healthCheck: typeof healthCheck;
   http: typeof http;
-  privateData: typeof privateData;
+  "lib/enums": typeof lib_enums;
+  "lib/helpers": typeof lib_helpers;
 }>;
 
 /**
@@ -52,6 +54,4 @@ export declare const internal: FilterApi<
   FunctionReference<any, "internal">
 >;
 
-export declare const components: {
-  betterAuth: import("@convex-dev/better-auth/_generated/component.js").ComponentApi<"betterAuth">;
-};
+export declare const components: {};

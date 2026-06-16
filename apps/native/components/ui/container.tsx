@@ -16,13 +16,7 @@ export function Container({ children, className, isScrollable = true, scrollView
 	const insets = useSafeAreaInsets();
 
 	return (
-		<AnimatedView
-			className={cn("flex-1 bg-background", className)}
-			style={{
-				paddingBottom: insets.bottom
-			}}
-			{...props}
-		>
+		<AnimatedView className={cn("flex-1 bg-background", className)} style={{ paddingBottom: insets.bottom }} {...props}>
 			{isScrollable ? (
 				<ScrollView
 					contentContainerStyle={{ flexGrow: 1 }}

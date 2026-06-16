@@ -11,17 +11,15 @@
 			"zod": "^4.1.13",
 			"typescript": "^6",
 			"convex": "^1.33.1",
-			"better-auth": "~1.6.9",
-			"@convex-dev/better-auth": "^0.12.2",
 			"@tanstack/react-form": "^1.28.0",
 			"@types/react-dom": "^19.2.3",
-			"@types/node": "^22.13.14",
-			"@better-auth/expo": "~1.6.9"
+			"@types/node": "^22.13.14"
 		}
 	},
 	"type": "module",
 	"scripts": {
 		"dev": "turbo dev",
+		"dev:log": "turbo dev 2>&1 | tee dev.log",
 		"build": "turbo build",
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",

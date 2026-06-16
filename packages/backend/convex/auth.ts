@@ -1,43 +1,78 @@
-import { expo } from "@better-auth/expo";
-import { createClient, type GenericCtx } from "@convex-dev/better-auth";
-import { convex, crossDomain } from "@convex-dev/better-auth/plugins";
-import { betterAuth } from "better-auth/minimal";
+import { v } from "convex/values";
 
-import { components } from "./_generated/api";
-import type { DataModel } from "./_generated/dataModel";
 import { query } from "./_generated/server";
-import authConfig from "./auth.config";
-
-const siteUrl = process.env.SITE_URL!;
-const nativeAppUrl = process.env.NATIVE_APP_URL || "cric-scorer://";
-
-export const authComponent = createClient<DataModel>(components.betterAuth);
-
-function createAuth(ctx: GenericCtx<DataModel>) {
-	return betterAuth({
-		baseURL: process.env.CONVEX_SITE_URL,
-		trustedOrigins: [siteUrl, nativeAppUrl, "exp://"],
-		database: authComponent.adapter(ctx),
-		emailAndPassword: {
-			enabled: true,
-			requireEmailVerification: false
-		},
-		plugins: [
-			expo(),
-			crossDomain({ siteUrl }),
-			convex({
-				authConfig,
-				jwksRotateOnTokenGenerationError: true
-			})
-		]
-	});
-}
-
-export { createAuth };
 
 export const getCurrentUser = query({
 	args: {},
+	returns: v.union(
+		v.null(),
+		v.object({
+			_id: v.id("users"),
+			_creationTime: v.number(),
+			authTokenIdentifier: v.string(),
+			googleSubject: v.optional(v.string()),
+			email: v.optional(v.string()),
+			name: v.optional(v.string()),
+			avatarUrl: v.optional(v.string()),
+			orgId: v.optional(v.id("organizations")),
+		}),
+	),
 	handler: async (ctx) => {
-		return await authComponent.safeGetAuthUser(ctx);
-	}
+		const identity = await ctx.auth.getUserIdentity();
+		if (!identity) {
+			return null;
+		}
+
+		const user = await ctx.db
+			.query("users")
+			.withIndex("by_authTokenIdentifier", (q) => q.eq("authTokenIdentifier", identity.tokenIdentifier))
+			.unique();
+
+		if (!user) {
+			return null;
+		}
+
+		return {
+			_id: user._id,
+			_creationTime: user._creationTime,
+			authTokenIdentifier: user.authTokenIdentifier,
+			googleSubject: user.googleSubject,
+			email: user.email,
+			name: user.name,
+			avatarUrl: user.avatarUrl,
+			orgId: user.orgId,
+		};
+	},
+});
+
+export const getCurrentIdentity = query({
+	args: {},
+	returns: v.union(
+		v.null(),
+		v.object({
+			subject: v.string(),
+			tokenIdentifier: v.string(),
+			issuer: v.string(),
+			name: v.optional(v.string()),
+			email: v.optional(v.string()),
+			emailVerified: v.optional(v.boolean()),
+			pictureUrl: v.optional(v.string()),
+		}),
+	),
+	handler: async (ctx) => {
+		const identity = await ctx.auth.getUserIdentity();
+		if (!identity) {
+			return null;
+		}
+
+		return {
+			subject: identity.subject,
+			tokenIdentifier: identity.tokenIdentifier,
+			issuer: identity.issuer,
+			name: identity.name,
+			email: identity.email,
+			emailVerified: identity.emailVerified,
+			pictureUrl: identity.pictureUrl,
+		};
+	},
 });

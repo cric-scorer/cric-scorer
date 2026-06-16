@@ -6,42 +6,40 @@
 
 @layer theme {
 	:root {
-		@variant dark {
-			--background: oklch(0.145 0 0);
-			--foreground: oklch(0.985 0 0);
-			--surface: oklch(0.205 0 0);
-			--surface-foreground: var(--foreground);
-			--surface-secondary: oklch(0.269 0 0);
-			--surface-secondary-foreground: var(--foreground);
-			--surface-tertiary: oklch(0.371 0 0);
-			--surface-tertiary-foreground: var(--foreground);
-			--overlay: oklch(0.205 0 0);
-			--overlay-foreground: var(--foreground);
-			--backdrop: oklch(0 0 0 / 20%);
-			--muted: oklch(0.708 0 0);
-			--default: oklch(0.269 0 0);
-			--default-foreground: var(--foreground);
-			--accent: oklch(0.371 0 0);
-			--accent-foreground: var(--foreground);
-			--field-background: oklch(0.205 0 0);
-			--field-foreground: var(--foreground);
-			--field-placeholder: var(--muted);
-			--field-border: transparent;
-			--success: oklch(0.809 0.105 251.813);
-			--success-foreground: var(--foreground);
-			--warning: oklch(0.623 0.214 259.815);
-			--warning-foreground: var(--foreground);
-			--danger: oklch(0.704 0.191 22.216);
-			--danger-foreground: var(--foreground);
-			--segment: oklch(0.269 0 0);
-			--segment-foreground: var(--foreground);
-			--border: oklch(1 0 0 / 10%);
-			--separator: oklch(1 0 0 / 15%);
-			--focus: oklch(0.556 0 0);
-			--link: var(--foreground);
-			--surface-shadow: 0 0 0 0 transparent inset;
-			--overlay-shadow: 0 0 1px 0 rgba(255, 255, 255, 0.2) inset;
-			--field-shadow: 0 0 0 0 transparent inset;
-		}
+		--background: oklch(0.145 0 0);
+		--foreground: oklch(0.985 0 0);
+		--surface: oklch(0.205 0 0);
+		--surface-foreground: var(--foreground);
+		--surface-secondary: oklch(0.269 0 0);
+		--surface-secondary-foreground: var(--foreground);
+		--surface-tertiary: oklch(0.371 0 0);
+		--surface-tertiary-foreground: var(--foreground);
+		--overlay: oklch(0.205 0 0);
+		--overlay-foreground: var(--foreground);
+		--backdrop: oklch(0 0 0 / 20%);
+		--muted: oklch(0.708 0 0);
+		--default: oklch(0.269 0 0);
+		--default-foreground: var(--foreground);
+		--accent: oklch(0.371 0 0);
+		--accent-foreground: var(--foreground);
+		--field-background: oklch(0.205 0 0);
+		--field-foreground: var(--foreground);
+		--field-placeholder: var(--muted);
+		--field-border: transparent;
+		--success: oklch(0.809 0.105 251.813);
+		--success-foreground: var(--foreground);
+		--warning: oklch(0.623 0.214 259.815);
+		--warning-foreground: var(--foreground);
+		--danger: oklch(0.704 0.191 22.216);
+		--danger-foreground: var(--foreground);
+		--segment: oklch(0.269 0 0);
+		--segment-foreground: var(--foreground);
+		--border: oklch(1 0 0 / 10%);
+		--separator: oklch(1 0 0 / 15%);
+		--focus: oklch(0.556 0 0);
+		--link: var(--foreground);
+		--surface-shadow: 0 0 0 0 transparent inset;
+		--overlay-shadow: 0 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+		--field-shadow: 0 0 0 0 transparent inset;
 	}
 }

@@ -44,7 +44,14 @@ Read-only users can view:
 
 ## Authentication And Organization Onboarding
 
-Use phone number authentication.
+Use custom Google login through the Convex auth integration. Better Auth is not part of the current auth direction.
+
+Current UI state:
+
+- `/login` is the only public screen.
+- `/` temporarily redirects to `/login`.
+
+After Google login, Convex should resolve the authenticated identity through `ctx.auth.getUserIdentity()` and map it to an app user record. Do not trust client-supplied user ids for authorization.
 
 After signup or first login, show the user two choices:
 

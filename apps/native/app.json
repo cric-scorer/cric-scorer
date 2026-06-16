@@ -1,10 +1,16 @@
 {
 	"expo": {
-		"scheme": "cric-scorer",
+		"name": "CricScorer",
+		"slug": "cricscorer",
+		"scheme": "pk.alihamas.cricscorer",
 		"userInterfaceStyle": "dark",
 		"orientation": "default",
-		"name": "cric-scorer",
-		"slug": "cric-scorer",
+		"android": {
+			"package": "pk.alihamas.cricscorer"
+		},
+		"ios": {
+			"bundleIdentifier": "pk.alihamas.cricscorer"
+		},
 		"plugins": ["expo-font"],
 		"experiments": {
 			"typedRoutes": true,
