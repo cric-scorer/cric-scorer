@@ -14,6 +14,7 @@
 	},
 	"devDependencies": {
 		"@cric-scorer/config": "workspace:*",
+		"@types/node": "catalog:",
 		"typescript": "catalog:"
 	}
 }

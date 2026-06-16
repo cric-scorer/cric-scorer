@@ -15,6 +15,7 @@
 			"@convex-dev/better-auth": "^0.12.2",
 			"@tanstack/react-form": "^1.28.0",
 			"@types/react-dom": "^19.2.3",
+			"@types/node": "^22.13.14",
 			"@better-auth/expo": "~1.6.9"
 		}
 	},
@@ -38,6 +39,7 @@
 	"devDependencies": {
 		"@cric-scorer/config": "workspace:*",
 		"@ianvs/prettier-plugin-sort-imports": "^4.7.1",
+		"@types/node": "^25.9.3",
 		"prettier": "^3.8.4",
 		"prettier-plugin-tailwindcss": "^0.8.0",
 		"turbo": "^2.9.16",

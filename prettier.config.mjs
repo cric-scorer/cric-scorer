@@ -5,7 +5,7 @@ const config = {
 	useTabs: true,
 	printWidth: 140,
 	singleQuote: false,
-	trailingComma: "none",
+	trailingComma: "all",
 	jsxSingleQuote: false,
 	importOrder: [
 		"^(react/(.*)$)|^(react$)",
