@@ -21,6 +21,10 @@
 		},
 		"expo-mcp": {
 			"url": "https://mcp.expo.dev/mcp"
+		},
+		"heroui-native": {
+			"command": "npx",
+			"args": ["-y", "@heroui/native-mcp@latest"]
 		}
 	}
 }

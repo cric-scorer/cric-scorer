@@ -11,7 +11,7 @@
 		"ios": {
 			"bundleIdentifier": "pk.alihamas.cricscorer"
 		},
-		"plugins": ["expo-font"],
+		"plugins": ["expo-font", "expo-router", "expo-secure-store"],
 		"experiments": {
 			"typedRoutes": true,
 			"reactCompiler": true

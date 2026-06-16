@@ -21,3 +21,7 @@ url = "https://mcp.inkeep.com/better-auth/mcp"
 [mcp_servers.expo-mcp]
 type = "http"
 url = "https://mcp.expo.dev/mcp"
+
+[mcp_servers.heroui-native]
+command = "npx"
+args = ["-y", "@heroui/native-mcp@latest"]

@@ -47,7 +47,7 @@ Workspace:
 
 Native app: `apps/native`
 
-- Expo SDK 54
+- Expo SDK 56
 - React Native
 - Expo Router
 - Convex client with `ConvexProviderWithAuth`
