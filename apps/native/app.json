@@ -3,15 +3,22 @@
 		"name": "CricScorer",
 		"slug": "cricscorer",
 		"scheme": "pk.alihamas.cricscorer",
-		"userInterfaceStyle": "dark",
 		"orientation": "default",
+		"userInterfaceStyle": "dark",
+		"icon": "./assets/icon.png",
 		"android": {
 			"package": "pk.alihamas.cricscorer"
 		},
 		"ios": {
 			"bundleIdentifier": "pk.alihamas.cricscorer"
 		},
-		"plugins": ["expo-font", "expo-router", "expo-secure-store"],
+		"plugins": [
+			["expo-font", {}],
+			["expo-router", {}],
+			["expo-secure-store", {}],
+			["expo-status-bar", { "hidden": false, "style": "light" }],
+			["expo-splash-screen", { "backgroundColor": "#5d0ec0", "imageWidth": 200, "image": "./assets/splash-icon.png" }]
+		],
 		"experiments": {
 			"typedRoutes": true,
 			"reactCompiler": true

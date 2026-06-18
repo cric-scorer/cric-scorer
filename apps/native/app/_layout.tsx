@@ -1,7 +1,9 @@
 import "@/global.css";
 
+import { useEffect } from "react";
 import { Text as NativeText } from "react-native";
 import { Stack } from "expo-router";
+import * as SplashScreen from "expo-splash-screen";
 import {
 	Outfit_400Regular,
 	Outfit_500Medium,
@@ -29,11 +31,21 @@ export const unstable_settings = {
 	initialRouteName: "index",
 };
 
+SplashScreen.preventAutoHideAsync();
+
 function StackLayout() {
 	return (
 		<Stack>
 			<Stack.Screen name="index" options={{ headerShown: false }} />
-			<Stack.Screen name="login" options={{ headerShown: false }} />
+			<Stack.Screen
+				name="login"
+				options={{
+					headerShown: false,
+					statusBarHidden: true,
+					statusBarTranslucent: true,
+					contentStyle: { backgroundColor: "transparent" },
+				}}
+			/>
 		</Stack>
 	);
 }
@@ -46,6 +58,12 @@ export default function Layout() {
 		Outfit_700Bold,
 		Outfit_800ExtraBold,
 	});
+
+	useEffect(() => {
+		if (fontsLoaded) {
+			SplashScreen.hide();
+		}
+	}, [fontsLoaded]);
 
 	if (!fontsLoaded) {
 		return null;

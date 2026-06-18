@@ -17,16 +17,19 @@
 		--default: oklch(27.4% 0.01 273.85);
 		--default-foreground: var(--foreground);
 
-		--accent: oklch(57.74% 0.2091 273.85);
+		--primary: oklch(0.432 0.232 292.759);
+		--primary-foreground: var(--foreground);
+
+		--accent: oklch(0.432 0.232 292.759);
 		--accent-foreground: var(--foreground);
 
-		--success: oklch(73.29% 0.1974 153.21);
+		--success: oklch(52.7% 0.154 150.069);
 		--success-foreground: var(--foreground);
 
-		--warning: oklch(78.19% 0.1617 74.73);
+		--warning: oklch(55.4% 0.135 66.442);
 		--warning-foreground: var(--foreground);
 
-		--danger: oklch(65.32% 0.2375 28.14);
+		--danger: oklch(50.5% 0.213 27.518);
 		--danger-foreground: var(--foreground);
 
 		--overlay: oklch(21.03% 0.02 273.85);
@@ -65,6 +68,4 @@
 	--font-semibold: "Outfit_600SemiBold";
 	--font-bold: "Outfit_700Bold";
 	--font-black: "Outfit_800ExtraBold";
-
-	--color-accent: var(--accent);
 }

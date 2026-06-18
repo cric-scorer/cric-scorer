@@ -3,7 +3,7 @@ import { StatusBar } from "expo-status-bar";
 
 import { GoogleIcon } from "@/components/ui/icons";
 
-const cricketBackground = require("@/assets/images/login_background.png");
+const cricketBackground = require("@/assets/login_background.png");
 
 export default function Login() {
 	return (
